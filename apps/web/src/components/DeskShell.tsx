@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useGameStore } from '../store/gameStore';
-import { EvidenceBoard } from './EvidenceBoard';
 import { CaseFileViewer } from './CaseFileViewer';
 import { InterrogationRoom } from './InterrogationRoom';
 import { TerminalView } from './TerminalView';
@@ -158,15 +157,14 @@ export const DeskShell: React.FC = () => {
 
       {/* Main Container */}
       <main className="flex-1 w-full max-w-[1400px] mx-auto px-6 py-6 flex flex-col justify-between">
-        {activeView === 'corkboard' && <EvidenceBoard />}
         {activeView === 'casefile' && <CaseFileViewer />}
         {activeView === 'interrogation' && <InterrogationRoom />}
         {activeView === 'terminal' && <TerminalView />}
         {activeView === 'canvass' && <LocationCanvass />}
         {activeView === 'indictment' && <IndictmentModal />}
 
-        {/* DEFAULT VIEW: The Exact Layout from Image 1, 2 & 3 */}
-        {activeView === 'desk' && (
+        {/* DEFAULT & EVIDENCE VIEW: The Exact Layout from Image 1, 2 & 3 */}
+        {(activeView === 'desk' || activeView === 'corkboard') && (
           <div className="flex flex-col space-y-6">
             {/* ─────────────────────────────────────────────────────────────
                 2. INCIDENT HEADER & ARRAIGNMENT STATS
@@ -374,7 +372,7 @@ export const DeskShell: React.FC = () => {
                 {/* Bottom-left Pill Button */}
                 <div className="relative z-20 mt-4">
                   <button
-                    onClick={() => setActiveView('corkboard')}
+                    onClick={() => handleClueClick('ev_dispatch')}
                     className="bg-[#1a1715]/90 border border-[#3d3732] px-3 py-1 rounded text-[10px] font-bold uppercase tracking-wider text-[#d5cec5] hover:text-white hover:border-[#665e56] transition-colors"
                   >
                     CLICK A CLUE TO EXAMINE
