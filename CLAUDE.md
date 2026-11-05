@@ -13,6 +13,7 @@
 - **Commercial Bar**: High atmospheric tension, tactile desk UI, realistic investigative proceduralism, zero hand-holding.
 
 ## 2. Monorepo Architecture
+- **Repository**: `https://github.com/mudrashah/detective_game.git`
 - `packages/case-engine`: Standalone, pure TypeScript package containing:
   - World model (characters, locations, relationships, ground truth timeline).
   - Evidence model (clues, derivation chains, secrets, red herrings).
