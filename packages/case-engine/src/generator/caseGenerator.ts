@@ -707,3 +707,4 @@ export function generateCase(options: GeneratorOptions = {}): CaseData {
     seed
   };
 }
+

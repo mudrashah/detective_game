@@ -1,37 +1,50 @@
 # Project Status: Sunset & Silence
 
-**Current Phase:** Phase 1: Case Engine Prototype & Solvability Verification (Completed)  
-**Last Updated:** Phase 1 Milestone Completed  
+**Current Phase:** Phase 2: Core UI & Detective Desk (Completed)  
+**Last Updated:** Phase 2 Milestone Completed  
 **Branch:** `master`
 
 ---
 
 ## Completed
-- **Project Governance & Documentation**:
-  - Created `CLAUDE.md` documenting locked decisions, architectural constraints, and development rules.
-  - Created `docs/PLAN.md` with complete 12-week roadmap to vertical slice.
-  - Initialized git repository and configured `.gitignore` & `.prettierrc`.
-- **Monorepo Setup**:
-  - Established npm workspaces: `packages/case-engine` and `apps/web`.
-  - Configured root and package TypeScript configurations (`tsconfig.base.json`, `tsconfig.json`).
-  - Set up Vitest test runner across monorepo.
-  - Scaffolded `apps/web` with Vite, React, Tailwind CSS, Framer Motion, Howler, and MapLibre GL dependencies.
-- **Case Engine Core (`packages/case-engine`)**:
-  - `prng`: Deterministic Mulberry32 seeded pseudo-random number generator.
-  - `types`: World model (`Character`, `Location`, `TimelineEvent`, `GroundTruthFact`, `GroundTruth`), Evidence model (`EvidenceItem`, `DerivationRule`, `FactLink`), and Interrogation model (`InterrogationTopic`, `InterrogationSession`, `Accusation`).
-  - `generator`: Deterministic case generator constructing ground truth timeline first, then deriving clues with non-murder suspect secrets and red herrings.
-  - `validator`: Algorithmic Solvability Validator that simulates an optimal detective agent, proves 100% case solvability, establishes the three legal conviction pillars (Motive, Opportunity, Means), and confirms no innocent suspect can be falsely convicted.
-  - `engine`: Active gameplay state manager handling canvassing, forensic lab ballistics/AFIS requests, judicial subpoenas (CSLI pings, CCTV footage), interrogation sessions with trust/pressure meters, lie breaking via contradictory proof, and lawyer lockout rules.
-  - `cli`: Interactive terminal detective desk (`npm run cli`) supporting dispatch reading, evidence inspection, location canvassing, crime lab requests, suspect interrogation, automated solvability verification, and DA indictment submission.
-  - Exported seeded Case 01 to `cases/case_01_echo_park.json`.
-- **Test Suite**:
-  - 11/11 Vitest tests passing covering PRNG determinism, fact derivation integrity, suspect secret distribution, solvability proof, legal pillar validation, wrongful arrest detection, and interrogation lie-breaking & lawyer walkout thresholds.
+- **Phase 1: Deterministic Case Engine & Solvability (Completed)**:
+  - Scaffolding of monorepo (`packages/case-engine`, `apps/web`, `docs/`).
+  - World model, evidence derivation chains, suspect secrets & PRNG determinism.
+  - Solvability Validator with 3-pillar proof & 11/11 Vitest tests.
+  - Interactive Terminal CLI (`npm run cli`).
+  - Case 01 exported to `cases/case_01_echo_park.json`.
+
+- **Phase 2: Core UI & Detective Desk (Completed)**:
+  - **Tactile Desk Shell (`DeskShell.tsx`)**:
+    - Central immersive workstation view with green banker's lamp (interactive warm cone toggle), wood grain desktop, manila case folder, wall corkboard, MDT terminal, interrogation suite portal, and police radio dispatch.
+    - Persistent 48-hour arraignment clock tracking in-game time consumption.
+  - **Tactile Evidence Board (`EvidenceBoard.tsx`)**:
+    - Framed corkboard canvas with pushpins, index cards, rotation jitter, category badges, and conviction pillar tags (Motive, Opportunity, Means).
+    - SVG interactive red yarn string connections linking clues with realistic gravity sag.
+    - Clue tray for unpinned discovered evidence with one-click pinning.
+  - **Case File Dossier & Autopsy (`CaseFileViewer.tsx`)**:
+    - Manila folder with tabbed sections (CAD Dispatch, Medical Examiner Autopsy, Phone & Surveillance Logs, Escrow Audit, Ballistics & AFIS).
+    - Authentic typewriter typography, classified stamps, and chain-of-custody markers.
+  - **Menu-based Interrogation Suite (`InterrogationRoom.tsx`)**:
+    - Two-way mirror suspect observation with Raymond Calderon, Elena Cruz, and Tyler Vance.
+    - Analog dynamic **Pressure Gauge** (0–100%) and **Trust Gauge** (0–100%).
+    - Suspect testimony tree with contradictory evidence presentation interface.
+    - 5th Amendment lawyer lockout mechanics triggered when badgered without evidence.
+  - **Retro CRT CAD Terminal (`TerminalView.tsx`)**:
+    - Phosphor scanline terminal for DOT traffic camera subpoenas, emergency CSLI cell tower warrants, and Crime Lab AFIS fingerprint runs.
+  - **LA Scene Canvassing (`LocationCanvass.tsx`)**:
+    - Realistic LA neighborhoods (Echo Park boathouse, Downtown Arts District accounting loft, Silver Lake escrow office, Filipinotown lounge, Los Feliz apartment).
+    - Fast travel time cost affecting the 48-hour arraignment deadline.
+  - **DA Arraignment & Accusation Modal (`IndictmentModal.tsx`)**:
+    - Formal indictment submission interface verifying Motive, Opportunity, and Means.
+    - Official DA determinations (First-degree murder conviction vs Case dismissed vs Catastrophic wrongful arrest disaster).
+  - **Tactile Audio Engine (`soundManager.ts`)**:
+    - Procedural zero-dependency Web Audio synthesizers for typewriter strikes, pushpin thuds, paper rustles, buzzer alarms, and dramatic lie-shattering impacts.
 
 ---
 
 ## In Progress / Next Up
-- **Phase 2 (Weeks 4–6): Core UI & Detective Desk (`apps/web`)**:
-  - Implement tactile "Detective Desk" UI shell (vintage desk lamp, file folders, landline, CAD terminal).
-  - Implement canvas/SVG Evidence Board with drag-and-drop pins, index cards, polaroids, and red string connections.
-  - Implement suspect interrogation screen with portrait displays, tension/trust meters, topic selection, and evidence presentation dialog.
-  - Wire `@sunset/case-engine` directly into Zustand store with IndexedDB local persistence.
+- **Phase 3 (Weeks 7–9): LA Map & Stylized CCTV Systems**:
+  - MapLibre GL dark-noir vector map integration for Los Angeles County.
+  - Stylized CCTV security playback viewer (lens distortion, timestamp scanlines, night glitches).
+  - Judicial warrant requirement checks linked to probable cause.

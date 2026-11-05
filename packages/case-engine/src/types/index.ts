@@ -255,3 +255,4 @@ export interface ValidationReport {
   stepsTrace: SolvabilityTraceStep[];
   errors: string[];
 }
+

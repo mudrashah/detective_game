@@ -35,3 +35,4 @@
   - Never run `git push`, publish packages, or incur monetary costs without explicit user confirmation.
   - Keep `docs/STATUS.md` updated at the conclusion of every work session.
   - Provide direct recommendations rather than non-committal lists of options.
+

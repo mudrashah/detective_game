@@ -9,18 +9,18 @@ An uncompromising, atmospheric detective game set in modern Los Angeles. The pla
 
 ### Phase 1: Weeks 1–3 — Deterministic Case Engine & Solvability
 - [x] Monorepo scaffold (`packages/case-engine`, `apps/web`, `docs/`) with TypeScript, Vitest, and lint configs.
-- [ ] World model (`Character`, `Location`, `Relationship`, `TimelineEvent`, `GroundTruth`).
-- [ ] Evidence model (`EvidenceItem`, `DerivationRule`, `FactLink`, `ContradictionMap`).
-- [ ] Seeded deterministic generator (Mulberry32 PRNG) generating a complete LA murder case.
-- [ ] Solvability validator simulating an optimal detective to prove case solvability.
-- [ ] Terminal CLI harness for rapid testing of case gameplay (interrogation, clue browsing, accusation).
+- [x] World model (`Character`, `Location`, `Relationship`, `TimelineEvent`, `GroundTruth`).
+- [x] Evidence model (`EvidenceItem`, `DerivationRule`, `FactLink`, `ContradictionMap`).
+- [x] Seeded deterministic generator (Mulberry32 PRNG) generating a complete LA murder case.
+- [x] Solvability validator simulating an optimal detective to prove case solvability.
+- [x] Terminal CLI harness for rapid testing of case gameplay (interrogation, clue browsing, accusation).
 
 ### Phase 2: Weeks 4–6 — Core UI & Detective Desk
-- [ ] Vite + React + Tailwind + Framer Motion setup in `apps/web`.
-- [ ] The "Detective Desk" metaphor: single immersive workstation view (desktop lamp, physical case binder, landline/radio, evidence corkboard, CAD/records terminal).
-- [ ] Tactile Evidence Board: Canvas/Pixi/SVG drag-and-drop pins, string connections, photo grain, index cards.
-- [ ] Case File & Forensic Viewer: autopsy reports, crime scene photos, fingerprint comparisons.
-- [ ] Menu-based Interrogation Suite: suspect portrait, trust/pressure gauges, testimony tree, evidence presentation interface, Miranda rights warning, lawyer walkout risk.
+- [x] Vite + React + Tailwind + Framer Motion setup in `apps/web`.
+- [x] The "Detective Desk" metaphor: single immersive workstation view (desktop lamp, physical case binder, landline/radio, evidence corkboard, CAD/records terminal).
+- [x] Tactile Evidence Board: Canvas/Pixi/SVG drag-and-drop pins, string connections, photo grain, index cards.
+- [x] Case File & Forensic Viewer: autopsy reports, crime scene photos, fingerprint comparisons.
+- [x] Menu-based Interrogation Suite: suspect portrait, trust/pressure gauges, testimony tree, evidence presentation interface, Miranda rights warning, lawyer walkout risk.
 
 ### Phase 3: Weeks 7–9 — LA Map & Stylized CCTV Systems
 - [ ] MapLibre GL integration with custom dark-noir monochrome/neon vector tiles for Los Angeles County.
