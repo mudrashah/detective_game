@@ -8,46 +8,46 @@ export default {
     extend: {
       colors: {
         noir: {
-          950: '#060608',
-          900: '#0c0d11',
-          850: '#12131a',
-          800: '#191b24',
-          750: '#202330',
-          700: '#2a2e40',
-          600: '#3c4159',
-          500: '#52597a',
-          400: '#757eab'
+          950: '#070709',
+          900: '#0c0b0a',
+          850: '#131211',
+          800: '#1b1918',
+          700: '#282523',
         },
-        dossier: {
-          bg: '#f6f1e3',
-          card: '#fffef9',
-          aged: '#eadeca',
-          border: '#cfbf9f',
-          ink: '#1c1917',
-          stamp: '#991b1b',
-          faded: '#78716c'
+        cork: {
+          base: '#4c3321',
+          dark: '#382215',
+          border: '#2c1a11'
+        },
+        parchment: {
+          DEFAULT: '#f4efe4',
+          card: '#ede6d6',
+          ink: '#22211f',
+          muted: '#6b6357'
+        },
+        manila: {
+          DEFAULT: '#dfc596',
+          dark: '#c4a670',
+          text: '#2d2417'
+        },
+        crimson: {
+          DEFAULT: '#7a1d1d',
+          dark: '#631515',
+          text: '#fee2e2'
         },
         crt: {
-          green: '#22c55e',
-          amber: '#fbbf24',
-          cyan: '#38bdf8',
-          bg: '#050c07',
-          text: '#4ade80'
+          green: '#4ade80',
+          dark: '#081009',
+          border: '#14381b',
+          dim: '#166534'
         }
       },
       fontFamily: {
-        mono: ['"Courier Prime"', 'Courier', 'monospace', '"Consolas"', '"JetBrains Mono"'],
-        serif: ['"Playfair Display"', 'Georgia', 'serif'],
-        sans: ['Inter', 'system-ui', 'sans-serif']
-      },
-      boxShadow: {
-        'lamp': '0 0 80px 25px rgba(245, 158, 11, 0.18)',
-        'crt': 'inset 0 0 30px rgba(34, 197, 94, 0.15), 0 0 20px rgba(34, 197, 94, 0.25)',
-        'paper': '0 4px 15px rgba(0, 0, 0, 0.45), 0 1px 3px rgba(0, 0, 0, 0.2)',
-        'pin': '0 3px 6px rgba(0, 0, 0, 0.6)'
+        typewriter: ['"Special Elite"', '"Courier Prime"', 'Courier', 'monospace'],
+        mono: ['"Courier Prime"', 'Courier', 'monospace'],
+        digital: ['"Share Tech Mono"', '"Courier Prime"', 'monospace']
       }
     },
   },
   plugins: [],
 }
-

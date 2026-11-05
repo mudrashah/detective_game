@@ -4,90 +4,93 @@
 
 @layer base {
   body {
-    @apply bg-noir-950 text-neutral-200 antialiased font-mono select-none overflow-hidden;
+    @apply bg-[#0c0b0a] text-[#f0ede6] antialiased select-none overflow-x-hidden;
+    font-family: 'Courier Prime', Courier, monospace;
   }
 }
 
-/* CRT Scanline effect */
-.crt-scanlines {
-  position: relative;
-  overflow: hidden;
-}
-
-.crt-scanlines::before {
-  content: " ";
-  display: block;
-  position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.35) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
-  z-index: 20;
-  background-size: 100% 3px, 6px 100%;
-  pointer-events: none;
-}
-
-/* Corkboard texture simulation */
-.corkboard-bg {
-  background-color: #2e1d13;
-  background-image: 
-    radial-gradient(#3a2518 15%, transparent 16%),
-    radial-gradient(#24160e 15%, transparent 16%),
-    radial-gradient(rgba(255,255,255,0.03) 2px, transparent 2px);
-  background-size: 16px 16px, 16px 16px, 32px 32px;
-  background-position: 0 0, 8px 8px, 4px 4px;
-}
-
-/* Wood desk texture simulation */
-.wood-desk-bg {
-  background-color: #120e0a;
+/* Authentic Noir Vertical Pinstripe Background */
+.noir-desk-bg {
+  background-color: #0c0b0a;
   background-image: repeating-linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0.015) 0px,
-    rgba(255, 255, 255, 0.015) 2px,
-    transparent 2px,
-    transparent 8px
-  ), radial-gradient(circle at 50% 20%, rgba(245, 158, 11, 0.08), transparent 70%);
+    rgba(255, 255, 255, 0.02) 0px,
+    rgba(255, 255, 255, 0.02) 1px,
+    transparent 1px,
+    transparent 4px
+  );
 }
 
-/* Paper stamp look */
-.stamp-classified {
-  border: 3px solid #b91c1c;
-  color: #b91c1c;
-  font-weight: 900;
+/* Corkboard Dotted Texture */
+.cork-texture {
+  background-color: #4c3321;
+  background-image: radial-gradient(#362215 18%, transparent 19%),
+    radial-gradient(#5b3f2a 15%, transparent 16%);
+  background-size: 8px 8px;
+  background-position: 0 0, 4px 4px;
+}
+
+/* Lined notebook paper background for Exhibit A */
+.lined-paper {
+  background-color: #fdfcf9;
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 17px,
+    #d8e4ec 17px,
+    #d8e4ec 18px
+  );
+}
+
+/* Polaroid hatched placeholder */
+.hatched-placeholder {
+  background: repeating-linear-gradient(
+    -45deg,
+    #cfc8bb,
+    #cfc8bb 2px,
+    #e8e2d5 2px,
+    #e8e2d5 8px
+  );
+}
+
+/* Red pushpin drop shadow */
+.pin-shadow {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+}
+
+/* Manila folder tab shadow */
+.folder-shadow {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Red classified ink stamp */
+.stamp-confidential {
+  border: 1.5px solid #d85040;
+  color: #d85040;
+  font-family: 'Special Elite', 'Courier Prime', monospace;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  transform: rotate(-6deg);
+  letter-spacing: 0.12em;
+  transform: rotate(-3deg);
   display: inline-block;
-  padding: 4px 12px;
-  mask-image: radial-gradient(circle at center, black 60%, rgba(0,0,0,0.7) 100%);
+  padding: 1px 6px;
+  border-radius: 2px;
 }
 
-.stamp-evidence {
-  border: 2px dashed #0369a1;
-  color: #0369a1;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  transform: rotate(3deg);
-  display: inline-block;
-  padding: 2px 8px;
-}
-
-/* Custom scrollbars for file dossiers */
+/* Custom subtle scrollbars */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.3);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(140, 140, 160, 0.3);
+  background: rgba(140, 140, 140, 0.3);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(180, 180, 200, 0.5);
+  background: rgba(180, 180, 180, 0.5);
 }
-
