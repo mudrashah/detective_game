@@ -8,6 +8,7 @@
   ],
   "scripts": {
     "build": "npm run --workspaces --if-present build",
+    "dev": "npm run --workspace=@sunset/web dev",
     "test": "vitest run",
     "test:watch": "vitest",
     "generate:case": "npm run --workspace=@sunset/case-engine generate:case",
